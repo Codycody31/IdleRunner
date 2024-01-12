@@ -1,6 +1,6 @@
 {
-    "name": "root Dev Container",
-    "image": "ubuntu:latest",
+    "name": "IdleRunner - Dev Container",
+    "image": "ubuntu:22.04",
     "settings": {
         "terminal.integrated.shell.linux": "/bin/bash"
     },
@@ -10,6 +10,6 @@
     "runArgs": [
         "--cap-add=SYS_TIME"
     ],
-    "postCreateCommand": "apt-get install -y cron sudo && service cron start && adduser --disabled-password --gecos '' root && adduser root sudo && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers && apt install systemctl -y",
+    "postCreateCommand": "apt-get update && apt-get install -y cron sudo && service cron start && apt install systemctl -y && adduser root sudo && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers",
     "remoteUser": "root"
 }
